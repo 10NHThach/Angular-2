@@ -1,0 +1,34 @@
+<mat-dialog-content class="dialog-content">
+  <!-- Tên hình ảnh -->
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Tên Hình Ảnh</mat-label>
+    <input matInput [(ngModel)]="data.ten" />
+  </mat-form-field>
+
+  <!-- Mô tả -->
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Mô Tả</mat-label>
+    <textarea matInput [(ngModel)]="data.moTa"></textarea>
+  </mat-form-field>
+
+  <!-- URL -->
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Đường Dẫn URL</mat-label>
+    <input matInput [(ngModel)]="data.imageUrl" />
+  </mat-form-field>
+
+  <!-- Dropdown chọn danh mục -->
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Danh Mục</mat-label>
+    <mat-select [(ngModel)]="data.danhMucId">
+      <mat-option *ngFor="let category of categories" [value]="category.id">
+        {{ category.ten }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-raised-button color="warn" (click)="onNoClick()">Hủy</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Lưu</button>
+</mat-dialog-actions>

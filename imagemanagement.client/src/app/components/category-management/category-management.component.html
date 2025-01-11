@@ -1,0 +1,36 @@
+<div class="container">
+  <h2 class="title">Quản lý Danh Mục</h2>
+  <div class="header-actions">
+    <button mat-raised-button color="primary" (click)="createCategory()">Tạo Mới</button>
+  </div>
+
+  <table mat-table [dataSource]="categories" class="mat-elevation-z8 custom-table">
+    <!-- Cột Tên -->
+    <ng-container matColumnDef="ten">
+      <th mat-header-cell *matHeaderCellDef class="table-header">Tên</th>
+      <td mat-cell *matCellDef="let category" class="table-cell">{{ category.ten }}</td>
+    </ng-container>
+
+    <!-- Cột Mô Tả -->
+    <ng-container matColumnDef="moTa">
+      <th mat-header-cell *matHeaderCellDef class="table-header">Mô Tả</th>
+      <td mat-cell *matCellDef="let category" class="table-cell">{{ category.moTa }}</td>
+    </ng-container>
+
+    <!-- Cột Hành Động -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef class="table-header">Hành Động</th>
+      <td mat-cell *matCellDef="let category" class="table-cell actions-cell">
+        <button mat-raised-button color="primary" [routerLink]="['/categories', category.id]">Xem</button>
+        <button mat-raised-button color="accent" (click)="editCategory(category)">Sửa</button>
+        <button mat-raised-button color="warn" (click)="deleteCategory(category.id)">Xóa</button>
+      </td>
+    </ng-container>
+
+    <!-- Hàng Header -->
+    <tr mat-header-row *matHeaderRowDef="['ten', 'moTa', 'actions']"></tr>
+
+    <!-- Hàng Dữ Liệu -->
+    <tr mat-row *matRowDef="let row; columns: ['ten', 'moTa', 'actions']"></tr>
+  </table>
+</div>

@@ -1,0 +1,58 @@
+<div class="container">
+  <h2 class="title">Tìm Kiếm Hình Ảnh</h2>
+  <div class="search-wrapper">
+    <!-- Tìm kiếm Tiêu Đề -->
+    <div class="search-box">
+      <input type="text" placeholder="Tìm kiếm tiêu đề..." [(ngModel)]="searchTerm.ten" />
+      <button (click)="search()">
+        <i class="material-icons">search</i>
+      </button>
+    </div>
+
+    <!-- Tìm kiếm Mô Tả -->
+    <div class="search-box">
+      <input type="text" placeholder="Tìm kiếm mô tả..." [(ngModel)]="searchTerm.moTa" />
+      <button (click)="search()">
+        <i class="material-icons">search</i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Kết quả tìm kiếm -->
+  <table mat-table [dataSource]="searchResults" class="custom-table mat-elevation-z8" *ngIf="searchResults.length > 0">
+    <!-- Cột Tiêu Đề -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Tiêu Đề</th>
+      <td mat-cell *matCellDef="let image">{{ image.ten }}</td>
+    </ng-container>
+
+    <!-- Cột Mô Tả -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Mô Tả</th>
+      <td mat-cell *matCellDef="let image">{{ image.moTa }}</td>
+    </ng-container>
+
+    <!-- Cột Hình Ảnh -->
+    <ng-container matColumnDef="imageUrl">
+      <th mat-header-cell *matHeaderCellDef>Hình Ảnh</th>
+      <td mat-cell *matCellDef="let image">
+        <img [src]="image.imageUrl" alt="{{ image.ten }}" class="image-preview" />
+      </td>
+    </ng-container>
+
+    <!-- Cột Hành Động -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Hành Động</th>
+      <td mat-cell *matCellDef="let image">
+        <div class="action-buttons">
+          <button mat-raised-button color="primary" (click)="viewImage(image)">Xem</button>
+          <button mat-raised-button color="accent" (click)="editImage(image)">Sửa</button>
+          <button mat-raised-button color="warn" (click)="deleteImage(image.id)">Xóa</button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['title', 'description', 'imageUrl', 'actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['title', 'description', 'imageUrl', 'actions']"></tr>
+  </table>
+</div>

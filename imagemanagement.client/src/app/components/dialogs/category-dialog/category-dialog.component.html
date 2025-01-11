@@ -1,0 +1,18 @@
+<mat-dialog-content class="dialog-content">
+  <!-- Tên danh mục -->
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Tên danh mục</mat-label>
+    <input matInput [(ngModel)]="data.ten" />
+  </mat-form-field>
+
+  <!-- Mô tả danh mục -->
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Mô tả</mat-label>
+    <textarea matInput [(ngModel)]="data.moTa"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-raised-button color="warn" (click)="onNoClick()">Hủy</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Lưu</button>
+</mat-dialog-actions>

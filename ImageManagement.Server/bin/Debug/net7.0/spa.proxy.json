@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:4200",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "D:\\DuAnAngular\\ImageManagement\\ImageManagement.Server\\..\\imagemanagement.client",
+"MaxTimeoutInSeconds": "120"
+}
+}

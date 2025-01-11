@@ -1,0 +1,139 @@
+/* Container Styles */
+.container {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fef6e4; /* Màu nền nhẹ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  max-width: 1200px;
+  margin: auto; /* Căn giữa */
+}
+
+/* Title Styles */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff7849; /* Màu cam đậm */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Header Actions */
+.header-actions {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+  .header-actions button {
+    font-weight: bold;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+    .header-actions button:hover {
+      background-color: #ff5722; /* Màu cam đậm */
+      color: white;
+    }
+
+/* Table Styles */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header Cells */
+.table-header {
+  background-image: linear-gradient(to right, #ffcc80, #ff8a50); /* Gradient cam */
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+/* Table Cells */
+.table-cell {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Table Row Hover Effect */
+tr.mat-row:hover {
+  background-color: #fff3e0;
+  transition: background-color 0.3s ease;
+}
+
+/* Image Preview */
+.image-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+  .image-preview:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-color: #ff7849; /* Màu cam */
+  }
+
+/* Action Buttons */
+.actions-cell button {
+  margin: 5px;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+  .actions-cell button[color="accent"] {
+    background-color: #42a5f5;
+    color: white;
+  }
+
+    .actions-cell button[color="accent"]:hover {
+      background-color: #1e88e5;
+    }
+
+  .actions-cell button[color="warn"] {
+    background-color: #ef5350;
+    color: white;
+  }
+
+    .actions-cell button[color="warn"]:hover {
+      background-color: #d32f2f;
+    }
+
+/* Date Column Styling */
+.table-cell.date {
+  font-style: italic;
+  color: #757575;
+  font-size: 12px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .custom-table {
+    font-size: 12px;
+  }
+
+  .image-preview {
+    width: 80px;
+    height: 80px;
+  }
+
+  .actions-cell button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}

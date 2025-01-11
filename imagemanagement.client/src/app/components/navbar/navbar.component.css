@@ -1,0 +1,50 @@
+/* Thanh công cụ */
+.custom-toolbar {
+  background: linear-gradient(90deg, #ff7e00, #ffa733); /* Gradient màu cam */
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+/* Container Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Logo */
+.logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Text Logo */
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Khoảng cách giữa logo và menu */
+.spacer {
+  flex: 1;
+}
+
+/* Link Menu */
+.menu-link {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  margin-left: 16px;
+}
+
+  .menu-link:hover {
+    color: #ffe5cc; /* Màu cam nhạt khi hover */
+    transition: color 0.3s ease;
+  }

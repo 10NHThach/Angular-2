@@ -1,0 +1,12 @@
+<div class="image-detail-container">
+  <button mat-button color="primary" class="back-button" (click)="goBack()">Quay lại</button>
+  <h2>Chi tiết Hình Ảnh</h2>
+  <div class="image-detail-card">
+    <img [src]="image.imageUrl" alt="{{ image.ten }}" class="image-preview" />
+    <div class="image-info">
+      <p><strong>Tên:</strong> {{ image.ten }}</p>
+      <p><strong>Mô tả:</strong> {{ image.moTa }}</p>
+      <p><strong>Ngày đăng:</strong> {{ image.ngayDang | date: 'dd/MM/yyyy' }}</p>
+    </div>
+  </div>
+</div>

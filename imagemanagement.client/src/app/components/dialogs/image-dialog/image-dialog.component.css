@@ -1,0 +1,57 @@
+/* Tổng thể dialog */
+.dialog-content {
+  padding: 20px;
+  background-color: #fff7e6; /* Nền vàng nhạt */
+  border-radius: 10px;
+}
+
+  .dialog-content .form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+.mat-form-field-outline {
+  border-color: #ff8c00 !important; /* Màu viền cam */
+}
+
+.mat-form-field.mat-focused .mat-form-field-outline {
+  border-color: #ff6700 !important; /* Màu cam đậm khi focus */
+}
+
+/* Nút hành động */
+.dialog-actions {
+  padding: 10px 20px;
+  background-color: #ffe5cc; /* Màu nền chân */
+  border-top: 1px solid #ffd699; /* Viền */
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+  .dialog-actions button {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 10px;
+    padding: 8px 20px;
+    border-radius: 8px;
+  }
+
+/* Nút Hủy */
+button[color="warn"] {
+  background-color: #ff4d4d; /* Màu đỏ */
+  color: white;
+}
+
+  button[color="warn"]:hover {
+    background-color: #ff1a1a; /* Đỏ đậm hơn khi hover */
+  }
+
+/* Nút Lưu */
+button[color="primary"] {
+  background-color: #ffa500; /* Màu cam */
+  color: white;
+}
+
+  button[color="primary"]:hover {
+    background-color: #ff8c00; /* Cam đậm hơn khi hover */
+  }

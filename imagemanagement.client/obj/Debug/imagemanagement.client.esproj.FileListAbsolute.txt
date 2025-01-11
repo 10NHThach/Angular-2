@@ -1,0 +1,1 @@
+D:\DuAnAngular\ImageManagement\imagemanagement.client\obj\Debug\imagemanagement.client.esproj.CoreCompileInputs.cache
