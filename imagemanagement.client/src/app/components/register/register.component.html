@@ -1,0 +1,19 @@
+<div class="card">
+  <h2>Đăng Ký</h2>
+  <mat-form-field appearance="outline">
+    <mat-label>Tên đăng nhập</mat-label>
+    <input matInput [(ngModel)]="username" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="email" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Mật khẩu</mat-label>
+    <input matInput type="password" [(ngModel)]="password" />
+  </mat-form-field>
+  <button mat-raised-button (click)="register()">Đăng Ký</button>
+  <p>
+    Đã có tài khoản? <a routerLink="/login">Đăng nhập</a>
+  </p>
+</div>

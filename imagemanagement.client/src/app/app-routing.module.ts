@@ -6,14 +6,20 @@ import { CategoryDetailComponent } from './components/category-detail/category-d
 import { ImageManagementComponent } from './components/image-management/image-management.component';
 import { ImageDetailComponent } from './components/image-detail/image-detail.component';
 import { SearchImagesComponent } from './components/search-images/search-images.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
+// Import standalone components
 const routes: Routes = [
   { path: 'categories', component: CategoryManagementComponent },
   { path: 'categories/:id', component: CategoryDetailComponent },
   { path: 'images', component: ImageManagementComponent },
   { path: 'images/:id', component: ImageDetailComponent },
   { path: 'search', component: SearchImagesComponent },
-  { path: '', redirectTo: '/categories', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }, // Redirect unknown routes to categories
 ];
 
 @NgModule({

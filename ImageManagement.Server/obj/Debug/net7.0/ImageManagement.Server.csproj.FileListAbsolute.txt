@@ -78,3 +78,5 @@ D:\DuAnAngular\ImageManagement\ImageManagement.Server\obj\Debug\net7.0\ImageMana
 D:\DuAnAngular\ImageManagement\ImageManagement.Server\obj\Debug\net7.0\ImageManagement.Server.genruntimeconfig.cache
 D:\DuAnAngular\ImageManagement\ImageManagement.Server\obj\Debug\net7.0\ref\ImageManagement.Server.dll
 D:\DuAnAngular\ImageManagement\ImageManagement.Server\obj\Debug\net7.0\ImageManagement.Server.sourcelink.json
+D:\DuAnAngular\ImageManagement\ImageManagement.Server\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\DuAnAngular\ImageManagement\ImageManagement.Server\bin\Debug\net7.0\BCrypt.Net-Next.dll

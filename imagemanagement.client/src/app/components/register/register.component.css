@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff; /* Nền trắng */
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 16px; /* Bo tròn góc */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+  background-color: #f9f9f9; /* Màu nền thẻ */
+  width: 100%;
+  max-width: 400px;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 24px; 
+  background-color: #007bff; 
+  color: #fff; 
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+  button:hover {
+    background-color: #0056b3; 
+  }
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+  a:hover {
+    text-decoration: underline;
+  }

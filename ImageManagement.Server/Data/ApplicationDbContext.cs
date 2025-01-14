@@ -9,5 +9,6 @@ namespace ImageManagement.Server.Data
 
         public DbSet<DanhMuc> DanhMucs { get; set; }
         public DbSet<HinhAnh> HinhAnhs { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImageManagement.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b51e22cb0dd6c93ef779abb1131e44476f4909c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4e9d2871a40c78f4bef22631241ed014f3fcc04")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImageManagement.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImageManagement.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

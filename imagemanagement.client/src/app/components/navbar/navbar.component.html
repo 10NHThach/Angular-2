@@ -1,12 +1,21 @@
 <mat-toolbar class="custom-toolbar">
   <div class="logo-container">
-    <img src="https://dongphucvina.vn/wp-content/uploads/2023/08/Letter-C-Bird-Logo-400x400.jpeg" alt="Logo" class="logo" />
+    <img src="https://dongphucvina.vn/wp-content/uploads/2023/08/Letter-C-Bird-Logo-400x400.jpeg"
+         alt="Logo"
+         class="logo" />
     <span class="logo-text">IMAGES</span>
   </div>
   <span class="spacer"></span>
   <nav>
-    <a mat-button routerLink="/categories" class="menu-link">Danh Mục</a>
-    <a mat-button routerLink="/images" class="menu-link">Hình Ảnh</a>
-    <a mat-button routerLink="/search" class="menu-link">Tìm Kiếm</a>
+    <ng-container *ngIf="!authService.isLoggedIn(); else loggedInLinks">
+      <a mat-button routerLink="/login" class="menu-link">Đăng Nhập</a>
+      <a mat-button routerLink="/register" class="menu-link">Đăng Ký</a>
+    </ng-container>
+    <ng-template #loggedInLinks>
+      <button mat-button (click)="logout()" class="menu-link">Đăng Xuất</button>
+      <a mat-button routerLink="/categories" class="menu-link">Danh Mục</a>
+      <a mat-button routerLink="/images" class="menu-link">Hình Ảnh</a>
+      <a mat-button routerLink="/search" class="menu-link">Tìm Kiếm</a>
+    </ng-template>
   </nav>
 </mat-toolbar>
