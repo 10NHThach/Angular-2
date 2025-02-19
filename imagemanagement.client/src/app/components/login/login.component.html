@@ -1,15 +1,17 @@
-<div class="card">
-  <h2>Đăng Nhập</h2>
-  <mat-form-field appearance="outline">
-    <mat-label>Tên đăng nhập</mat-label>
-    <input matInput [(ngModel)]="username" />
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Mật khẩu</mat-label>
-    <input matInput type="password" [(ngModel)]="password" />
-  </mat-form-field>
-  <button mat-raised-button (click)="login()">Đăng Nhập</button>
-  <p>
-    Chưa có tài khoản? <a routerLink="/register">Đăng ký</a>
-  </p>
+<div class="form-container">
+  <div class="form-card">
+    <h2 class="form-title">Đăng Nhập</h2>
+    <mat-form-field appearance="outline" class="input-field">
+      <mat-label>Tên đăng nhập</mat-label>
+      <input matInput [(ngModel)]="username" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input-field">
+      <mat-label>Mật khẩu</mat-label>
+      <input matInput [(ngModel)]="password" type="password" />
+    </mat-form-field>
+    <button mat-raised-button class="form-button" (click)="login()">Đăng Nhập</button>
+    <p class="form-links">
+      <a routerLink="/register">Chưa có tài khoản? Đăng ký</a>
+    </p>
+  </div>
 </div>

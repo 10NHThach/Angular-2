@@ -6,29 +6,43 @@
   display: flex;
   align-items: center;
   height: 64px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm shadow nhẹ cho thanh công cụ */
+  border-radius: 8px; /* Bo góc nhẹ */
 }
 
 /* Container Logo */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px; /* Tăng khoảng cách giữa logo và text */
 }
 
 /* Logo */
 .logo {
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
   object-fit: cover;
+  transition: transform 0.3s ease; /* Hiệu ứng hover */
 }
+
+  .logo:hover {
+    transform: scale(1.1); /* Phóng to logo khi hover */
+  }
 
 /* Text Logo */
 .logo-text {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 700;
   text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
 }
+
+  .logo-text:hover {
+    color: #ffe5cc; /* Màu cam nhạt khi hover */
+  }
 
 /* Khoảng cách giữa logo và menu */
 .spacer {
@@ -42,9 +56,36 @@
   color: white;
   text-transform: uppercase;
   margin-left: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
   .menu-link:hover {
     color: #ffe5cc; /* Màu cam nhạt khi hover */
-    transition: color 0.3s ease;
+    transform: translateY(-2px); /* Hiệu ứng nâng lên khi hover */
   }
+
+/* Đảm bảo rằng menu có kiểu chữ dễ đọc và tương phản tốt */
+.menu-link {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Đảm bảo thanh công cụ phản hồi tốt trên thiết bị di động */
+@media (max-width: 768px) {
+  .custom-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+  }
+
+  .menu-link {
+    margin-left: 0;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+}
+

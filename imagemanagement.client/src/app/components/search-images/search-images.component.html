@@ -1,9 +1,15 @@
 <div class="container">
   <h2 class="title">Tìm Kiếm Hình Ảnh</h2>
+
+  <!-- Thông báo lỗi -->
+  <div class="error-message" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
   <div class="search-wrapper">
     <!-- Tìm kiếm Tiêu Đề -->
     <div class="search-box">
-      <input type="text" placeholder="Tìm kiếm tiêu đề..." [(ngModel)]="searchTerm.ten" />
+      <input type="text" placeholder="Tìm kiếm tiêu đề..." [(ngModel)]="searchTerm.ten" (ngModelChange)="onSearchChange()" />
       <button (click)="search()">
         <i class="material-icons">search</i>
       </button>
@@ -11,11 +17,22 @@
 
     <!-- Tìm kiếm Mô Tả -->
     <div class="search-box">
-      <input type="text" placeholder="Tìm kiếm mô tả..." [(ngModel)]="searchTerm.moTa" />
+      <input type="text" placeholder="Tìm kiếm mô tả..." [(ngModel)]="searchTerm.moTa" (ngModelChange)="onSearchChange()" />
       <button (click)="search()">
         <i class="material-icons">search</i>
       </button>
     </div>
+  </div>
+
+  <!-- Hiển thị trạng thái loading -->
+  <div *ngIf="loading" class="loading-indicator">
+    <mat-spinner></mat-spinner>
+    Đang tải...
+  </div>
+
+  <!-- Thông báo khi không có kết quả -->
+  <div *ngIf="!loading && searchResults.length === 0 && !errorMessage" class="no-results">
+    Không tìm thấy hình ảnh phù hợp!
   </div>
 
   <!-- Kết quả tìm kiếm -->
@@ -45,9 +62,15 @@
       <th mat-header-cell *matHeaderCellDef>Hành Động</th>
       <td mat-cell *matCellDef="let image">
         <div class="action-buttons">
-          <button mat-raised-button color="primary" (click)="viewImage(image)">Xem</button>
-          <button mat-raised-button color="accent" (click)="editImage(image)">Sửa</button>
-          <button mat-raised-button color="warn" (click)="deleteImage(image.id)">Xóa</button>
+          <button mat-icon-button color="primary" (click)="viewImage(image)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button mat-icon-button color="accent" (click)="editImage(image)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteImage(image.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
         </div>
       </td>
     </ng-container>
