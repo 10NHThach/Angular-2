@@ -5,4 +5,5 @@ export interface HinhAnh {
   danhMucId: number;
   imageUrl: string;
   ngayDang: string; // Ngày đăng tải
+  isFavorite: boolean; // Thêm thuộc tính này
 }

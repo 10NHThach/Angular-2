@@ -1,33 +1,40 @@
-/* Thanh công cụ */
+/* Thanh công cụ - Navbar */
 .custom-toolbar {
-  background: linear-gradient(90deg, #ff7e00, #ffa733); /* Gradient màu cam */
-  color: white;
+  background: linear-gradient(90deg, #222, #333); /* Đậm hơn để tạo chiều sâu */
+  color: white !important;
   padding: 0 20px;
   display: flex;
   align-items: center;
-  height: 64px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm shadow nhẹ cho thanh công cụ */
+  height: 70px; /* Điều chỉnh chiều cao */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Thêm shadow rõ hơn */
   border-radius: 8px; /* Bo góc nhẹ */
+  transition: background 0.3s ease; /* Hiệu ứng mượt mà */
 }
 
-/* Container Logo */
+  /* Hiệu ứng khi hover navbar */
+  .custom-toolbar:hover {
+    background: linear-gradient(90deg, #1a1a1a, #2a2a2a);
+  }
+
+/* Logo Container */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Tăng khoảng cách giữa logo và text */
+  gap: 12px; /* Tăng khoảng cách giữa logo và text */
 }
 
 /* Logo */
 .logo {
-  height: 45px;
-  width: 45px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.3s ease; /* Hiệu ứng hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
   .logo:hover {
-    transform: scale(1.1); /* Phóng to logo khi hover */
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
   }
 
 /* Text Logo */
@@ -36,12 +43,12 @@
   font-weight: 700;
   text-transform: uppercase;
   color: white;
-  letter-spacing: 1px;
-  transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
+  letter-spacing: 1.2px;
+  transition: color 0.3s ease;
 }
 
   .logo-text:hover {
-    color: #ffe5cc; /* Màu cam nhạt khi hover */
+    color: #ff9800; /* Màu cam sáng khi hover */
   }
 
 /* Khoảng cách giữa logo và menu */
@@ -53,23 +60,26 @@
 .menu-link {
   font-size: 16px;
   font-weight: bold;
-  color: white;
+  color: white !important;
   text-transform: uppercase;
-  margin-left: 16px;
+  margin-left: 20px;
   transition: color 0.3s ease, transform 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+/* Đảm bảo không bị Angular Material ghi đè */
+.mat-toolbar a, .mat-toolbar button {
+  color: white !important; /* Cố định màu trắng */
 }
 
   .menu-link:hover {
-    color: #ffe5cc; /* Màu cam nhạt khi hover */
+    color: #ff9800 !important;
     transform: translateY(-2px); /* Hiệu ứng nâng lên khi hover */
+    background: rgba(255, 152, 0, 0.2);
   }
 
-/* Đảm bảo rằng menu có kiểu chữ dễ đọc và tương phản tốt */
-.menu-link {
-  font-family: 'Roboto', sans-serif;
-}
-
-/* Đảm bảo thanh công cụ phản hồi tốt trên thiết bị di động */
+/* Responsive trên di động */
 @media (max-width: 768px) {
   .custom-toolbar {
     flex-direction: column;
@@ -86,6 +96,6 @@
     margin-left: 0;
     margin-top: 8px;
     font-size: 14px;
+    display: block;
   }
 }
-

@@ -13,4 +13,7 @@ public class HinhAnh
     public DanhMuc? DanhMuc { get; set; }
     public string ImageUrl { get; set; } // Đừng quên URL hình ảnh
     public DateTime NgayDang { get; set; } = DateTime.Now; // Ngày đăng tải
+    //
+    public bool IsFavorite { get; set; } = false;
+
 }

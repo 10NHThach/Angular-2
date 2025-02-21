@@ -10,6 +10,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ImageService } from '../../services/image.service';
 import { Router } from '@angular/router'; // Import Router để điều hướng
 import { HinhAnh } from '../../models/hinhanh.model';
+import { MatIconModule } from '@angular/material/icon'; // ✅ Thêm import MatIconModule
 import { ImageDialogComponent, DeleteConfirmDialog } from '../dialogs/image-dialog/image-dialog.component';
 
 @Component({
@@ -24,6 +25,7 @@ import { ImageDialogComponent, DeleteConfirmDialog } from '../dialogs/image-dial
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatIconModule, // ✅ Thêm MatIconModule vào imports
   ],
   templateUrl: './image-management.component.html',
   styleUrls: ['./image-management.component.css'],
@@ -51,6 +53,29 @@ export class ImageManagementComponent {
       }
     );
   }
+  toggleFavorite(image: HinhAnh) {
+    image.isFavorite = !image.isFavorite; // Cập nhật ngay UI trước khi gọi API
+
+    this.imageService.toggleFavorite(image.id).subscribe(
+      (updatedImage) => {
+        image.isFavorite = updatedImage.isFavorite; // Cập nhật theo API
+      },
+      (error) => {
+        console.error('Lỗi khi cập nhật yêu thích:', error);
+        image.isFavorite = !image.isFavorite; // Hoàn tác nếu có lỗi
+      }
+    );
+  }
+  filterFavorites() {
+    this.imageService.getFavoriteImages().subscribe(
+      (data: HinhAnh[]) => {
+        this.filteredImages = data;
+      },
+      (error) => {
+        console.error('Lỗi khi tải ảnh yêu thích:', error);
+      }
+    );
+  }
   viewImage(image: HinhAnh): void {
     // Điều hướng đến trang chi tiết hình ảnh
     this.router.navigate(['/images', image.id]); // Điều hướng với id hình ảnh
@@ -60,7 +85,6 @@ export class ImageManagementComponent {
       width: '400px',
       data: { title: 'Tạo hình ảnh mới', ten: '', moTa: '', imageUrl: '', danhMucId: null, ngayDang: new Date() },
     });
-
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         const newImage: HinhAnh = {
@@ -70,6 +94,7 @@ export class ImageManagementComponent {
           danhMucId: result.danhMucId,
           imageUrl: result.imageUrl,
           ngayDang: new Date().toISOString(),
+          isFavorite: false, 
         };
 
         this.imageService.createImage(newImage).subscribe(

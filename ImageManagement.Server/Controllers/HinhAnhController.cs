@@ -77,5 +77,27 @@ namespace ImageManagement.Server.Controllers
 
             return NoContent();
         }
+        [HttpGet("favorites")]
+        public IActionResult GetFavoriteImages()
+        {
+            var favoriteImages = _context.HinhAnhs.Where(img => img.IsFavorite).ToList();
+            return Ok(favoriteImages);
+        }
+
+        [HttpPut("toggle-favorite/{id}")]
+        public IActionResult ToggleFavorite(int id)
+        {
+            var image = _context.HinhAnhs.Find(id);
+            if (image == null)
+            {
+                return NotFound();
+            }
+
+            image.IsFavorite = !image.IsFavorite; // Đảo trạng thái yêu thích
+            _context.SaveChanges();
+
+            return Ok(image);
+        }
+
     }
 }

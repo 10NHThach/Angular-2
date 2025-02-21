@@ -30,4 +30,12 @@ export class ImageService {
   deleteImage(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+  getFavoriteImages(): Observable<HinhAnh[]> {
+    return this.http.get<HinhAnh[]>(`${this.apiUrl}/favorites`);
+  }
+  // 🔴 Toggle (Bật/Tắt) trạng thái yêu thích của ảnh
+  toggleFavorite(id: number): Observable<HinhAnh> {
+    return this.http.put<HinhAnh>(`${this.apiUrl}/toggle-favorite/${id}`, {});
+  }
+
 }

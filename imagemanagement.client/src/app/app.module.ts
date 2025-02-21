@@ -12,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule, // Buttons in dialog
     MatFormFieldModule, // Form fields
     MatInputModule, // Input fields
+    MatSnackBarModule,
     MatIconModule, // Icons for dialog
   ],
   bootstrap: [AppComponent], // Bootstrap trực tiếp standalone component

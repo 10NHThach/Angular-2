@@ -11,7 +11,7 @@
   </div>
 
   <!-- Bảng Hình Ảnh -->
-  <div *ngIf="category && category.hinhAnhs && category.hinhAnhs.length > 0; else noImages">
+  <div *ngIf="category && category.hinhAnhs && category.hinhAnhs.length > 0; else noImages">  
     <table mat-table [dataSource]="category.hinhAnhs" class="custom-table mat-elevation-z8">
       <!-- Tên hình ảnh -->
       <ng-container matColumnDef="ten">

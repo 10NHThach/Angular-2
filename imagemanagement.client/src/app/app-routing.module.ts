@@ -8,18 +8,21 @@ import { ImageDetailComponent } from './components/image-detail/image-detail.com
 import { SearchImagesComponent } from './components/search-images/search-images.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FavoriteImagesComponent } from './components/favorite-images/favorite-images.component'; // Import Component Ảnh Yêu Thích
 
-// Import standalone components
+import { AuthGuard } from './services/auth.guard';
+
 const routes: Routes = [
   { path: 'categories', component: CategoryManagementComponent },
   { path: 'categories/:id', component: CategoryDetailComponent },
   { path: 'images', component: ImageManagementComponent },
   { path: 'images/:id', component: ImageDetailComponent },
   { path: 'search', component: SearchImagesComponent },
+  { path: 'favorites', component: FavoriteImagesComponent, canActivate: [AuthGuard] }, // Bảo vệ trang Ảnh Yêu Thích
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login' }, // Redirect unknown routes to categories
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({
